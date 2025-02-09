@@ -34,3 +34,14 @@ button:hover {
   font-size: 12px;
 }
 
+.login {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+}
+.login:hover {
+  text-decoration: underline;
+}
+

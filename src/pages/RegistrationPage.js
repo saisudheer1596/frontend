@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/Register.css";
+import { useNavigate } from "react-router-dom";
 
 const RegistrationPage = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ const RegistrationPage = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -106,6 +108,7 @@ const RegistrationPage = () => {
 
         <button type="submit">Register</button>
       </form>
+      <p className="note">Already registered?<span className='login'  onClick={() => navigate("/login")}> Login</span></p>
     </div>
   );
 };

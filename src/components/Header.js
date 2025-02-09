@@ -1,21 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../css/Header.css";
-import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
+import { FaHome, FaSearch, FaShoppingCart, FaUserCircle } from "react-icons/fa";
 
 function Header() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    alert(`Searching for: ${searchQuery}`);
+  };
   return (
-    <header className="header">
-    <div className="logo">E-Shop</div>
+    <header className="header mb-3">
+    <div className="logo">E-shop</div>
     <nav className="nav">
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/#">Shop</a></li>
-        <li><a href="/#">About</a></li>
-        <li><a href="/#">Contact</a></li>
+        <li><a href="/" className="icon"><FaHome size={24} /></a></li>
+         
       </ul>
+      
     </nav>
+    <div>
+      <form className="search-bar" onSubmit={handleSearchSubmit}>
+        <input
+          type="text"
+          placeholder="Search products..."
+          value={searchQuery}
+          onChange={handleSearchChange}
+          
+        />
+        <button type="submit" className="icon"><FaSearch size={24}/></button>
+        
+      </form>
+    </div>
     <div className="icons">
-      <a href="/cart" className="icon">
+      <a href="/cart" className='icon'>
         <FaShoppingCart size={24} />
       </a>
       <a href="/login" className="icon">

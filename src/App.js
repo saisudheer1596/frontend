@@ -6,6 +6,7 @@ import Header from './components/Header';
 import CartPage from './pages/CartPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import RegistrationPage from './pages/RegistrationPage';
 
 
 function App() {
@@ -16,10 +17,11 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/login" element={<LoginPage />} /> 
+        <Route path="/register" element={<RegistrationPage />} /> 
       </Routes>
       <Footer/>
     </div>
-  );
+  )
 }
 
 export default App;
