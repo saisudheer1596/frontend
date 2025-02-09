@@ -18,8 +18,7 @@ function Header() {
     <div className="logo">E-shop</div>
     <nav className="nav">
       <ul>
-        <li><a href="/" className="icon"><FaHome size={24} /></a></li>
-         
+        <li><a href="/" className="icon"><FaHome size={24} /></a></li>  
       </ul>
       
     </nav>
